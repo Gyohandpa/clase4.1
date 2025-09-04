@@ -4,7 +4,8 @@ class Paciente:
         self.__cedula = int
         self.__genero = ""
         self.__servicio = ""
-        
+
+    
     def verNombre(self):
         return self.__nombre
     def verServicio(self):
@@ -28,8 +29,12 @@ class Sistema:
         self.__lista_pacientes = []
       
     def eliminarPaciente(self,c):
-        if self.verDatosPaciente(c):
-            pass
+        a= self.VerDatosPacientes(c)
+        if a != None:
+            self.__lista_pacientes.remove(a)
+            # del self.__lista_pacientes(indice)
+        else:
+            return False
       
     def verificarPac(self,ced):
         encontrado =  False
